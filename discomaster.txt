@@ -541,8 +541,8 @@ TFDC-28029　￥1,020 (tax in)
 ***
 
 Single Release:1995.05.10
-【es】～ Theme of es ～
-【es】～ Theme of es ～
+【es】～Theme of es～
+【es】～Theme of es～
 TFDC-28030　￥1,020 (tax in)
 
 01. 【es】～Theme of es～
@@ -638,7 +638,7 @@ I'LL BE
 I'LL BE
 TFDC-28102　￥1,020 (tax in)
 
-01. I’LL BE
+01. I'LL BE
 02. Surrender
 
 ***
