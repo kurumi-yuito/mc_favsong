@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>楽曲一覧 — DISCOMASTER</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1 class="title">楽曲一覧</h1>
+      <p class="subtitle">Mr.Children楽曲一覧</p>
+    </header>
+
+    <section class="filters" aria-label="絞り込み">
+      <div class="filter filter--grow">
+        <label class="filter-label" for="filter-song">楽曲名</label>
+        <div class="combo" id="combo-song">
+          <input
+            id="filter-song"
+            type="text"
+            class="filter-input"
+            autocomplete="off"
+            placeholder="入力でサジェスト"
+            aria-autocomplete="list"
+            aria-controls="list-song"
+            aria-expanded="false"
+          />
+          <ul class="suggest" id="list-song" role="listbox" hidden></ul>
+        </div>
+      </div>
+      <div class="filter filter--grow">
+        <label class="filter-label" for="filter-work">作品名</label>
+        <div class="combo" id="combo-work">
+          <input
+            id="filter-work"
+            type="text"
+            class="filter-input"
+            autocomplete="off"
+            placeholder="入力でサジェスト"
+            aria-autocomplete="list"
+            aria-controls="list-work"
+            aria-expanded="false"
+          />
+          <ul class="suggest" id="list-work" role="listbox" hidden></ul>
+        </div>
+      </div>
+      <div class="filter filter--narrow">
+        <label class="filter-label" for="filter-category">区分</label>
+        <select id="filter-category" class="filter-select">
+          <option value="">（すべて）</option>
+        </select>
+      </div>
+      <div class="filter filter--narrow">
+        <label class="filter-label" for="filter-era">年代</label>
+        <select id="filter-era" class="filter-select">
+          <option value="">（すべて）</option>
+        </select>
+      </div>
+    </section>
+
+    <p class="count count--above" id="row-count" aria-live="polite"></p>
+
+    <div class="table-wrap">
+      <table class="song-table">
+        <thead>
+          <tr>
+            <th scope="col">
+              <button type="button" class="sort-btn" data-sort="song" aria-label="楽曲名でソート">
+                楽曲名 <span class="sort-ind" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th scope="col">
+              <button type="button" class="sort-btn" data-sort="work" aria-label="作品名でソート">
+                作品名 <span class="sort-ind" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th scope="col">
+              <button type="button" class="sort-btn" data-sort="category" aria-label="区分でソート">
+                区分 <span class="sort-ind" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th scope="col">
+              <button type="button" class="sort-btn" data-sort="date" aria-label="年月日でソート">
+                リリース日 <span class="sort-ind" aria-hidden="true"></span>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="song-tbody"></tbody>
+      </table>
+    </div>
+
+    <aside class="detail" id="detail-panel" hidden>
+      <h2 class="detail-title">レコメンド（10曲）</h2>
+      <div class="table-wrap detail-cluster-wrap">
+        <table class="song-table detail-cluster-table" aria-label="かたまりの10曲">
+          <thead>
+            <tr>
+              <th scope="col">楽曲名</th>
+              <th scope="col">作品名</th>
+              <th scope="col">区分</th>
+              <th scope="col">リリース日</th>
+            </tr>
+          </thead>
+          <tbody id="cluster-tbody"></tbody>
+        </table>
+      </div>
+    </aside>
+
+    <p class="hint" id="load-error" hidden></p>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
