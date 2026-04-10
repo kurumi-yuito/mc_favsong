@@ -144,15 +144,18 @@ body {
 
 .table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--surface);
 }
 
 .song-table {
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
+  table-layout: auto;
 }
 
 .song-table th,
@@ -160,13 +163,13 @@ body {
   padding: 0.55rem 0.75rem;
   text-align: left;
   border-bottom: 1px solid var(--border);
-  vertical-align: top;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .song-table thead th {
   background: #f0ebe5;
   font-weight: 600;
-  white-space: nowrap;
 }
 
 .sort-btn {
@@ -295,6 +298,7 @@ body {
 .detail-cluster-wrap .song-table tbody td.cluster-msg {
   color: var(--muted);
   font-size: 0.9rem;
+  white-space: normal;
 }
 
 .hint {
